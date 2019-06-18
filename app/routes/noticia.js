@@ -1,6 +1,11 @@
 module.exports = function (application) {
 	
 	application.get('/noticia/', function(req, res){			
+
+		// este render se refere ao arquivo /noticia/list.ejs
+
+		// que esta dentro da pasta views
+
 		res.render('noticia/list');
 	});
 
@@ -9,7 +14,7 @@ module.exports = function (application) {
 	});
 
 	application.get('/noticia/show/:noticia_id', function(req, res){
-		
+		res.render('noticia/show', req.params);
 	});	
 
 	application.post('/noticia/getById', function(req, res){		
@@ -17,7 +22,7 @@ module.exports = function (application) {
 	});	
 
 	application.get('/noticia/add', function(req, res){
-	
+
 	});
 		
 	application.post('/noticia/add', function(req, res){
